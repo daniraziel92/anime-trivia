@@ -1,0 +1,18 @@
+.Answer{
+    color: white;
+    font-size: large;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:1vh;
+      
+ }
+ .Validation-Img{
+    width: 10vw;
+ }
+ .Anime-Name{
+    font-size: 4Vh;
+    font-weight: 100;
+ }

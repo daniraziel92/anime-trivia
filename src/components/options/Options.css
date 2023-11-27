@@ -1,0 +1,17 @@
+
+.optionBox{
+    border: 1px yellow solid;
+    height: 10vh;
+    width: 40vw;
+    border-radius: 30px;
+    color: yellow;
+    background-color: transparent;
+}
+.optionBox:hover{
+    background-color: yellow;
+    color: blue;
+}
+.optionBox:focus{
+    background-color: yellow;
+    color: blue;
+}
