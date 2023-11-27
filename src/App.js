@@ -22,7 +22,7 @@ const [anime,setAnime] =  React.useState(animeSample);
 const [listAnime, setListAnime] = React.useState([]);
 const [confirmation,setConfirmation] = React.useState("");
 const [score, setScore] = React.useState(0);
-const [questionNumber,setQuestionNumber] = React.useState(0);
+const [questionNumber,setQuestionNumber] = React.useState(1);
 
 
 const createPromise = ()=>{
@@ -109,7 +109,7 @@ console.log(anime);
     <div>
       <div className='Title-Div'>
         <img src={titleImage} className='Title-Img' id="tittleImg"/>
-        <div className='Question' id='question' >Choose the title of the anime in the image</div>
+        <div className='Question' id='question' >Question# {questionNumber} Choose the title of the anime in the image</div>
       </div>
       <div className="App">
         <Answer title={anime.title}/>
@@ -121,7 +121,7 @@ console.log(anime);
           )
           }
         </div>
-        <img src={anime.images.jpg.image_url} className='anime-img' id='animeImg' onClick={hintImage}/>
+        <img src={anime.images.jpg.image_url} className='anime-img' id='animeImg'/>
       </div>
       <div>
       <div className='Container-Buttons'>

@@ -46,9 +46,11 @@ body{
   color: #61dafb;
 }
 
-.anime-img{
+.Anime-img{
   border-radius: 10px;
   filter: blur(5px);
+  animation-name: animationImage;
+  animation-duration: 2s;
 }
 
 
@@ -88,4 +90,8 @@ body{
   align-items: center;
   color: white;
   font-size: 3vh;
+}
+@keyframes animationImage {
+  from{transform: rotateY(0deg);}
+  to{transform: rotateY(180deg)}
 }
