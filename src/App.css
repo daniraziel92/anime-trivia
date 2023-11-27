@@ -103,12 +103,16 @@ body{
   from{transform: rotateY(0deg);}
   to{transform: rotateY(180deg)}
 }
+.Anime-hint{
+  display: flex;
+}
 .Synopsis-div{
   background-color: black;
   color:white;
   position: absolute;
   font-size: small;
   display: none;
+  width: 20vw;
 }
 span:hover + .Synopsis-div{
   display: block;
