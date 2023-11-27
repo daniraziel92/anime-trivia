@@ -1,5 +1,5 @@
 import './App.css';
-import Options from './components/Options/Options';
+import Options from './components/options/Options';
 import React from 'react';
 import titleImage from './TitleApp.png';
 import loadingImage from './Loading.jpg';
@@ -99,9 +99,6 @@ const openInfo = () =>{
   window.open(anime.url);
 }
 
-const hintImage = () =>{
-  document.getElementById("animeImg").style = "transform:rotateY(360)";
-}
 console.log(listAnime,"soy list");
 console.log(anime);
   return (
