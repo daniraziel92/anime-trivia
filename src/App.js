@@ -122,7 +122,7 @@ console.log(anime);
             <img src={anime.images.jpg.image_url} className='Anime-img' id='animeImg'/>
           </span>
           <div className='Synopsis-div'>{anime.synopsis}</div>
-      </div>
+        </div>
       </div>
       <div>
         <div className='Container-buttons'>
