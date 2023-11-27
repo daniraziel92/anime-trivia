@@ -117,3 +117,7 @@ body{
 span:hover + .Synopsis-div{
   display: block;
 }
+
+.Synopsis-div:hover{
+  display: block;
+}
