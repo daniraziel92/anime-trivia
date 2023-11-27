@@ -117,16 +117,22 @@ console.log(anime);
           )
           }
         </div>
-        <img src={anime.images.jpg.image_url} className='Anime-img' id='animeImg'/>
+        <div className='Anime-hint'>
+          <span>
+            <img src={anime.images.jpg.image_url} className='Anime-img' id='animeImg'/>
+          </span>
+          <div className='Synopsis-div'>{anime.synopsis}</div>
+      </div>
       </div>
       <div>
-      <div className='Container-buttons'>
-        <button className='Button-option' onClick={validate} id='confirm'>Confirm</button>
-        <button className='Button-option' id ='skip' onClick={goThrought}>Skip</button>
-        <button className='Button-option' onClick={openInfo} id='learnMore'>Learn More...</button>
-        <button className='Button-option' id='next' onClick={goThrought}>Next</button>
-      </div>
-      <div className='Score'>Score: {score}</div>
+        <div className='Container-buttons'>
+          <button className='Button-option' onClick={validate} id='confirm'>Confirm</button>
+          <button className='Button-option' id ='skip' onClick={goThrought}>Skip</button>
+          <button className='Button-option' onClick={openInfo} id='learnMore'>Learn More...</button>
+          <button className='Button-option' id='next' onClick={goThrought}>Next</button>
+        </div>
+        <div className='Score'>Score: {score}</div>
+        <div className='Hint'>(Put the mouse over the image to see the synopsis of the anime)</div>
       </div>
     </div>
   );

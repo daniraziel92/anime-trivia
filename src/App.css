@@ -91,7 +91,25 @@ body{
   color: white;
   font-size: 3vh;
 }
+.Hint{
+  margin-top: 1vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: small;
+}
 @keyframes animationImage {
   from{transform: rotateY(0deg);}
   to{transform: rotateY(180deg)}
+}
+.Synopsis-div{
+  background-color: black;
+  color:white;
+  position: absolute;
+  font-size: small;
+  display: none;
+}
+span:hover + .Synopsis-div{
+  display: block;
 }
