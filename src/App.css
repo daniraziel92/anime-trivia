@@ -4,14 +4,14 @@
   justify-content: center;
   gap:10vw;
 }
-.Title-Div{
+.Title-div{
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
   width: 100vw;
 }
-.Title-Img{
+.Title-img{
   width: 80vw;
 }
 body{
@@ -55,13 +55,13 @@ body{
 
 
 
-.Container-Buttons{
+.Container-buttons{
   margin-top: 2vh;
   display: flex;
   justify-content: center;
   gap: 3vw;
 }
-.Button-Option{
+.Button-option{
   color: yellowgreen;
   border-radius: 20px;
   background-color:transparent;
@@ -73,7 +73,7 @@ body{
   -moz-box-shadow: 1px 2px 8px -1px  yellowgreen;
 
 }
-.Button-Option:hover{
+.Button-option:hover{
   background-color:yellowgreen;
   color: blue;
   font-weight: 100;

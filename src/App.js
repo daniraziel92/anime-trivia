@@ -1,6 +1,5 @@
-import logo from './logo.svg';
 import './App.css';
-import Options from './components/options/Options';
+import Options from './components/Options/Options';
 import React from 'react';
 import titleImage from './TitleApp.png';
 import loadingImage from './Loading.jpg';
@@ -107,8 +106,8 @@ console.log(listAnime,"soy list");
 console.log(anime);
   return (
     <div>
-      <div className='Title-Div'>
-        <img src={titleImage} className='Title-Img' id="tittleImg"/>
+      <div className='Title-div'>
+        <img src={titleImage} className='Title-img' id="tittleImg"/>
         <div className='Question' id='question' >Question# {questionNumber} Choose the title of the anime in the image</div>
       </div>
       <div className="App">
@@ -121,14 +120,14 @@ console.log(anime);
           )
           }
         </div>
-        <img src={anime.images.jpg.image_url} className='anime-img' id='animeImg'/>
+        <img src={anime.images.jpg.image_url} className='Anime-img' id='animeImg'/>
       </div>
       <div>
-      <div className='Container-Buttons'>
-        <button className='Button-Option' onClick={validate} id='confirm'>Confirm</button>
-        <button className='Button-Option' id ='skip' onClick={goThrought}>Skip</button>
-        <button className='Button-Option' onClick={openInfo} id='learnMore'>Learn More...</button>
-        <button className='Button-Option' id='next' onClick={goThrought}>Next</button>
+      <div className='Container-buttons'>
+        <button className='Button-option' onClick={validate} id='confirm'>Confirm</button>
+        <button className='Button-option' id ='skip' onClick={goThrought}>Skip</button>
+        <button className='Button-option' onClick={openInfo} id='learnMore'>Learn More...</button>
+        <button className='Button-option' id='next' onClick={goThrought}>Next</button>
       </div>
       <div className='Score'>Score: {score}</div>
       </div>

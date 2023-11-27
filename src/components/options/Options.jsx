@@ -9,7 +9,7 @@ const handlerSelectOption = (e) => {
 
 return (
     <div>
-    <button className='optionBox' onClick={handlerSelectOption} name={props.title}>
+    <button className='Option-box' onClick={handlerSelectOption} name={props.title}>
            {props.title}
     </button>
     </div>
