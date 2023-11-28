@@ -23,6 +23,13 @@ function App() {
   const [confirmation,setConfirmation] = React.useState("");
   const [score, setScore] = React.useState(0);
   const [questionNumber,setQuestionNumber] = React.useState(1);
+  const refSkip = React.useRef(null);
+  const refConfirm = React.useRef(null);
+  const refLearnMore = React.useRef(null);
+  const refNext = React.useRef(null);
+  const refOptions = React.useRef(null);
+  const refAnimeImg = React.useRef(null);
+  const refQuestion = React.useRef(null);
 
 
   const createPromise = ()=>{
@@ -49,15 +56,16 @@ function App() {
     const randomAnime = Math.floor(Math.random()*4);
     console.log(randomAnime);
     setAnime(optionsAnime[randomAnime]);
-    document.getElementById("skip").removeAttribute('hidden');
-    document.getElementById("learnMore").setAttribute('hidden',true);
-    document.getElementById("next").setAttribute('hidden',true);
+    refSkip.current.removeAttribute('hidden',true);
+    refLearnMore.current.setAttribute('hidden',true);
+    refNext.current.setAttribute('hidden',true);
     document.getElementById("correctAnswer").setAttribute('hidden',true);
     document.getElementById("wrongAnswer").setAttribute('hidden',true);
-    document.getElementById("options").removeAttribute('hidden');
-    document.getElementById("confirm").removeAttribute('hidden');
-    document.getElementById("question").removeAttribute('hidden');
-    document.getElementById("animeImg").style="filter: blur(5px)";
+    refOptions.current.removeAttribute('hidden');
+    refOptions.current.removeAttribute('hidden');
+    refConfirm.current.removeAttribute('hidden');
+    refQuestion.current.removeAttribute('hidden');
+    refAnimeImg.current.style="filter: blur(5px)";
   }
 
   React.useEffect( () => {
@@ -65,7 +73,7 @@ function App() {
     const promise2 = createPromise();
     const promise3 = createPromise();
     const promise4 = createPromise();
-    //document.getElementById("options").setAttribute('hidden',false);
+    //refOptions.current.setAttribute('hidden',false);
     Promise.all([promise1, promise2, promise3,promise4]).then((values) => {
       //console.log(values);
       setListAnime(values);
@@ -77,13 +85,13 @@ function App() {
   const validate = () =>{
     console.log(confirmation);
     console.log(anime.title);
-    document.getElementById("animeImg").style="filter: blur(0px)";
-    document.getElementById("skip").setAttribute('hidden',true);
-    document.getElementById("confirm").setAttribute('hidden',true);
-    document.getElementById("learnMore").removeAttribute('hidden');
-    document.getElementById("next").removeAttribute('hidden');
-    document.getElementById("options").setAttribute('hidden',true);
-    document.getElementById("question").setAttribute('hidden',true);
+    refAnimeImg.current.style="filter: blur(0px)";
+    refSkip.current.setAttribute('hidden',true);
+    refConfirm.current.setAttribute('hidden',true);
+    refLearnMore.current.removeAttribute('hidden');
+    refNext.current.removeAttribute('hidden');
+    refOptions.current.setAttribute('hidden',true);
+    refQuestion.current.setAttribute('hidden',true);
     if (confirmation === anime.title){
       document.getElementById("correctAnswer").removeAttribute('hidden');
       setScore( (prevScore)=> prevScore + 100);
@@ -100,17 +108,15 @@ function App() {
     window.open(anime.url);
   }
 
-  console.log(listAnime,"soy list");
-  console.log(anime);
     return (
       <div>
         <div className='Title-div'>
-          <img src={titleImage} className='Title-img' id="tittleImg"/>
-          <div className='Question' id='question' >Question# {questionNumber} Choose the title of the anime in the image</div>
+          <img src={titleImage} className='Title-img'/>
+          <div className='Question' ref={refQuestion} >Question# {questionNumber} Choose the title of the anime in the image</div>
         </div>
         <div className="App">
           <Answer title={anime.title}/>
-          <div id ="options" className='options'>
+          <div ref={refOptions} className='options'>
             {listAnime.map((option,index) => <Options
               title = {option.title}
               key = {index}
@@ -120,17 +126,17 @@ function App() {
           </div>
           <div className='Anime-hint'>
             <span>
-              <img src={anime.images.jpg.image_url} className='Anime-img' id='animeImg'/>
+              <img src={anime.images.jpg.image_url} className='Anime-img' ref ={refAnimeImg}/>
             </span>
             <div className='Synopsis-div'>{anime.synopsis}</div>
           </div>
         </div>
         <div>
           <div className='Container-buttons'>
-            <button className='Button-option' onClick={validate} id='confirm'>Confirm</button>
-            <button className='Button-option' id ='skip' onClick={goThrought}>Skip</button>
-            <button className='Button-option' onClick={openInfo} id='learnMore'>Learn More...</button>
-            <button className='Button-option' id='next' onClick={goThrought}>Next</button>
+            <button className='Button-option' onClick={validate} ref = {refConfirm}>Confirm</button>
+            <button className='Button-option' ref = {refSkip} onClick={goThrought}>Skip</button>
+            <button className='Button-option' onClick={openInfo} ref = {refLearnMore}>Learn More...</button>
+            <button className='Button-option' ref = {refNext} onClick={goThrought}>Next</button>
           </div>
           <div className='Score'>Score: {score}</div>
           <div className='Hint'>(Put the mouse over the image to see the synopsis of the anime)</div>
